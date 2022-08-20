@@ -1,10 +1,8 @@
 require 'pry'
 
 class Artist
-  extend Memorable::ClassMethods, Findable
+  extend Memorable::ClassMethods, Findable  #name-spacing
   include Memorable::InstanceMethods, Paramable
-
-
   attr_accessor :name
   attr_reader :songs
 
@@ -14,10 +12,6 @@ class Artist
     super
     @songs = []
   end
-
-  # def self.find_by_name(name)
-  #   @@artists.detect{|a| a.name == name}
-  # end
 
   def self.all
     @@artists
